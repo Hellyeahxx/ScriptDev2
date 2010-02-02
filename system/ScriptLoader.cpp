@@ -8,6 +8,7 @@
 extern void AddSC_battleground();
 
 //custom
+extern void AddSC_guildmaster();
 
 //examples
 extern void AddSC_example_creature();
@@ -246,6 +247,24 @@ extern void AddSC_ungoro_crater();
 extern void AddSC_winterspring();
 
 //northrend
+extern void AddSC_instance_icecrown_citadel();						//icecrown_citadel
+extern void AddSC_boss_deathbringer_saurfang();
+extern void AddSC_boss_festergut();
+extern void AddSC_boss_lady_deathwhisper();
+extern void AddSC_boss_lord_marrowgar();
+extern void AddSC_boss_professor_putricide();
+extern void AddSC_boss_rotface();
+extern void AddSC_the_forge_of_souls();								//the_forge_of_souls
+extern void AddSC_boss_devourer();
+extern void AddSC_boss_bronjahm();
+extern void AddSC_instance_trial_of_the_crusader();					//trial_of_the_crusader
+extern void AddSC_gormok_the_impaler();
+extern void AddSC_the_two_jormungar();
+extern void AddSC_trial_of_the_champion();                            //trial_of_the_champion
+extern void AddSC_boss_argent_challenge(); 
+extern void AddSC_boss_black_knight();
+extern void AddSC_boss_grand_champions();
+extern void AddSC_instance_trial_of_the_champion();
 extern void AddSC_boss_jedoga();                            //ahnkahet
 extern void AddSC_boss_nadox();
 extern void AddSC_boss_taldaram();
@@ -399,6 +418,7 @@ void AddScripts()
     AddSC_battleground();
 
     //custom
+	AddSC_guildmaster();
 
     //examples
     AddSC_example_creature();
@@ -637,7 +657,25 @@ void AddScripts()
     AddSC_winterspring();
 
     //northrend
-    AddSC_boss_jedoga();                                    //ahnkahet
+	AddSC_instance_icecrown_citadel();						//icecrown_citadel
+	AddSC_boss_deathbringer_saurfang();
+	AddSC_boss_festergut();
+	AddSC_boss_lady_deathwhisper();
+	AddSC_boss_lord_marrowgar();
+	AddSC_boss_professor_putricide();
+	AddSC_boss_rotface();
+	AddSC_the_forge_of_souls();								//the_forge_of_souls
+	AddSC_boss_devourer();
+	AddSC_boss_bronjahm();
+	AddSC_instance_trial_of_the_crusader();					//trial_of_the_crusader
+	AddSC_gormok_the_impaler();
+	AddSC_the_two_jormungar();
+	AddSC_trial_of_the_champion();							//trial_of_the_champion
+	AddSC_boss_argent_challenge();
+	AddSC_boss_black_knight();
+	AddSC_boss_grand_champions();
+	AddSC_instance_trial_of_the_champion();
+	AddSC_boss_jedoga();                                    //ahnkahet
     AddSC_boss_nadox();
     AddSC_boss_taldaram();
     AddSC_boss_volazj();
