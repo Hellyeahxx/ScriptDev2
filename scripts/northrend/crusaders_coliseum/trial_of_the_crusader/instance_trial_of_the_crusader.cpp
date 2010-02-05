@@ -32,7 +32,9 @@ if( pInstance && pInstance->GetData(DOOR1) == NOT_STARTED)
 				}
 			}
  }
+return true;
 }
+return false;
 }
  
 bool GossipSelect_Barrett_Ramsey(Player *player, Creature *_Creature, uint32 sender, uint32 action)
@@ -42,8 +44,8 @@ bool GossipSelect_Barrett_Ramsey(Player *player, Creature *_Creature, uint32 sen
      pInstance->SetData(action, IN_PROGRESS);
 	player->CLOSE_GOSSIP_MENU();
  
- 
- 
+return true; 
+
 }
  
  
@@ -354,14 +356,14 @@ InstanceData* GetInstanceData_instance_trial_of_the_crusader(Map* pMap)
  
 void AddSC_instance_trial_of_the_crusader()
 {
+    Script* newscript;
 	newscript = new Script;
 	newscript->Name="Barrett_Ramsey";
 	newscript->pGossipHello = &GossipHello_Barrett_Ramsey;
 	newscript->pGossipSelect = &GossipSelect_Barrett_Ramsey;
     newscript->RegisterSelf();
  
-    Script* newscript;
-    newscript = new Script;
+	newscript = new Script;
     newscript->Name = "instance_trial_of_the_crusader";
     newscript->GetInstanceData = &GetInstanceData_instance_trial_of_the_crusader;
     newscript->RegisterSelf();

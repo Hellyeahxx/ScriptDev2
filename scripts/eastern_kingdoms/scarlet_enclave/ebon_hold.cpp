@@ -2477,7 +2477,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
 // disable              if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiLichKingGUID)))
 //  because mangos          DoCast(m_creature, SPELL_MOGRAINE_CHARGE); // jumping charge
 //   doesn't make it looks well, so workarounds, Darion charges, looks better
-                        m_creature->SetSpeed(MOVE_RUN, 3.0f);
+                        m_creature->SetSpeedRate(MOVE_RUN, 3.0f);
                         m_creature->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
                         SetHoldState(false);
                         JumpToNextStep(0);
@@ -2489,7 +2489,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                             pTemp->HandleEmoteCommand(EMOTE_ONESHOT_KICK);
                             DoScriptText(SAY_LIGHT_OF_DAWN46, pTemp);
                         }
-                        m_creature->SetSpeed(MOVE_RUN, 6.0f);
+                        m_creature->SetSpeedRate(MOVE_RUN, 6.0f);
                         ((Unit*)m_creature)->SetStandState(UNIT_STAND_STATE_DEAD);
                         SetHoldState(false); // Darion got kicked by lich king
                         JumpToNextStep(0);
@@ -2551,7 +2551,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                                 {
                                     pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_ATTACK_UNARMED);
                                     pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
-                                    pTemp->SetSpeed(MOVE_RUN, 2.0f);
+                                    pTemp->SetSpeedRate(MOVE_RUN, 2.0f);
                                     pTemp->setFaction(m_creature->getFaction());
                                     pTemp->GetMotionMaster()->MovePoint(0, fLichPositionX, fLichPositionY, fLichPositionZ);
                                     uiDefenderGUID[0] = pTemp->GetGUID();
@@ -2561,7 +2561,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                                 {
                                     pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_ATTACK_UNARMED);
                                     pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
-                                    pTemp->SetSpeed(MOVE_RUN, 2.0f);
+                                    pTemp->SetSpeedRate(MOVE_RUN, 2.0f);
                                     pTemp->setFaction(m_creature->getFaction());
                                     pTemp->GetMotionMaster()->MovePoint(0, fLichPositionX, fLichPositionY, fLichPositionZ);
                                     uiEarthshatterGUID[0] = pTemp->GetGUID();
@@ -2571,7 +2571,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                             {
                                 pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_ATTACK_UNARMED);
                                 pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
-                                pTemp->SetSpeed(MOVE_RUN, 2.0f);
+                                pTemp->SetSpeedRate(MOVE_RUN, 2.0f);
                                 pTemp->GetMotionMaster()->MovePoint(0, fLichPositionX, fLichPositionY, fLichPositionZ);
                                 DoScriptText(SAY_LIGHT_OF_DAWN50, pTemp);
                             }
@@ -2579,7 +2579,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                             {
                                 pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_ATTACK_UNARMED);
                                 pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
-                                pTemp->SetSpeed(MOVE_RUN, 2.0f);
+                                pTemp->SetSpeedRate(MOVE_RUN, 2.0f);
                                 pTemp->HandleEmoteCommand(EMOTE_STATE_ATTACK_UNARMED);
                                 pTemp->GetMotionMaster()->MovePoint(0, fLichPositionX, fLichPositionY, fLichPositionZ);
                             }
@@ -2587,7 +2587,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                             {
                                 pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_ATTACK_UNARMED);
                                 pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
-                                pTemp->SetSpeed(MOVE_RUN, 2.0f);
+                                pTemp->SetSpeedRate(MOVE_RUN, 2.0f);
                                 pTemp->GetMotionMaster()->MovePoint(0, fLichPositionX, fLichPositionY, fLichPositionZ);
                             }
                         }
@@ -2601,33 +2601,33 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiMaxwellGUID)))
                         {
                             pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_ONESHOT_NONE);
-                            pTemp->SetSpeed(MOVE_RUN, 6.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 6.0f);
                             ((Unit*)pTemp)->SetStandState(UNIT_STAND_STATE_DEAD);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[14].x, LightofDawnLoc[14].y, LightofDawnLoc[14].z);
                         }
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiKorfaxGUID)))
                         {
                             pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_ONESHOT_NONE);
-                            pTemp->SetSpeed(MOVE_RUN, 6.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 6.0f);
                             ((Unit*)pTemp)->SetStandState(UNIT_STAND_STATE_DEAD);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[11].x, LightofDawnLoc[11].y, LightofDawnLoc[11].z);
                         }
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiEligorGUID)))
                         {
                             pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_ONESHOT_NONE);
-                            pTemp->SetSpeed(MOVE_RUN, 6.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 6.0f);
                             ((Unit*)pTemp)->SetStandState(UNIT_STAND_STATE_DEAD);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[17].x, LightofDawnLoc[17].y, LightofDawnLoc[17].z);
                         }
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiDefenderGUID[0])))
                         {
-                            pTemp->SetSpeed(MOVE_RUN, 6.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 6.0f);
                             ((Unit*)pTemp)->SetStandState(UNIT_STAND_STATE_DEAD);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[0].x+rand()%10, LightofDawnLoc[0].y+rand()%10, LightofDawnLoc[0].z);
                         }
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiEarthshatterGUID[0])))
                         {
-                            pTemp->SetSpeed(MOVE_RUN, 6.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 6.0f);
                             ((Unit*)pTemp)->SetStandState(UNIT_STAND_STATE_DEAD);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[0].x+rand()%10, LightofDawnLoc[0].y+rand()%10, LightofDawnLoc[0].z);
                         }
@@ -2650,7 +2650,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                         break;
  
                     case 46: // Darion stand up, "not today"
-                        m_creature->SetSpeed(MOVE_RUN, 1.0f);
+                        m_creature->SetSpeedRate(MOVE_RUN, 1.0f);
                         m_creature->AddMonsterMoveFlag(MONSTER_MOVE_WALK);
                         ((Unit*)m_creature)->SetStandState(UNIT_STAND_STATE_STAND);
                         DoScriptText(SAY_LIGHT_OF_DAWN53, m_creature);
@@ -2709,7 +2709,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                             DoScriptText(EMOTE_LIGHT_OF_DAWN16, pTemp);
                             pTemp->CastSpell(pTemp, SPELL_TIRION_CHARGE, false); // jumping charge
                             pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_STATE_READY2H);
-                            pTemp->SetSpeed(MOVE_RUN, 3.0f); // workarounds, make Tirion still running
+                            pTemp->SetSpeedRate(MOVE_RUN, 3.0f); // workarounds, make Tirion still running
                             pTemp->RemoveMonsterMoveFlag(MONSTER_MOVE_WALK);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[2].x, LightofDawnLoc[2].y, LightofDawnLoc[2].z);
                             if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiLichKingGUID)))
@@ -2727,7 +2727,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                     case 54:
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiLichKingGUID)))
                         {
-                            pTemp->SetSpeed(MOVE_RUN, 1.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 1.0f);
                             m_creature->AddMonsterMoveFlag(MONSTER_MOVE_WALK);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[29].x, LightofDawnLoc[29].y, LightofDawnLoc[29].z); // 26
                         }
@@ -2764,7 +2764,7 @@ struct MANGOS_DLL_DECL npc_highlord_darion_mograineAI : public npc_escortAI
                         if (Creature* pTemp = ((Creature*)Unit::GetUnit((*m_creature), uiTirionGUID))) // Tirion runs to Darion
                         {
                             pTemp->SetUInt32Value(UNIT_NPC_EMOTESTATE, EMOTE_ONESHOT_NONE);
-                            pTemp->SetSpeed(MOVE_RUN, 1.0f);
+                            pTemp->SetSpeedRate(MOVE_RUN, 1.0f);
                             pTemp->GetMotionMaster()->MovePoint(0, LightofDawnLoc[6].x, LightofDawnLoc[6].y, LightofDawnLoc[6].z);
                         }
                         JumpToNextStep(2500);
@@ -3329,7 +3329,7 @@ struct MANGOS_DLL_DECL npc_eye_of_acherusAI : public ScriptedAI
                 char * text1 = "The Eye of Acherus is in your control";
                 Eye1->MonsterTextEmote(text1, Eye1->GetGUID(), true);
                 m_creature->RemoveMonsterMoveFlag(MONSTER_MOVE_SPLINE_FLY);
-                m_creature->SetSpeed(MOVE_FLIGHT, 3.0f, true);
+                m_creature->SetSpeedRate(MOVE_FLIGHT, 3.0f, true);
                 m_creature->CastSpell(m_creature, 51890, true);
             }
         }
@@ -3347,8 +3347,8 @@ struct MANGOS_DLL_DECL npc_eye_of_acherusAI : public ScriptedAI
                 char * text = "The Eye of Acherus launches towards its destination";
                 Eye->MonsterTextEmote(text, Eye->GetGUID(), true);
                 m_creature->SetMonsterMoveFlags(MONSTER_MOVE_SPLINE_FLY);
-                m_creature->SetSpeed(MOVE_FLIGHT, 8.0f, true);
-                m_creature->SetSpeed(MOVE_WALK, 8.0f, true);
+                m_creature->SetSpeedRate(MOVE_FLIGHT, 8.0f, true);
+                m_creature->SetSpeedRate(MOVE_WALK, 8.0f, true);
                 m_creature->GetMotionMaster()->MovePoint(0, 1711, -5820, 147);
                 Active = true;
             }

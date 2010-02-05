@@ -15,6 +15,13 @@ enum
  
  
 	GO_LORD_MARROWGAR_DOOR      = 201857,
+	
+	
+	TYPE_ROTFACE                = 0,
+	TYPE_PROFESSOR_PUTRICIDE    = 0,
+	TYPE_LADY_DEATHWHISPER      = 0,
+	TYPE_FESTTERGUT             = 0,
+	TYPE_DEATHBRINGER_SAURFANG  = 0,
 };
  
 #endif

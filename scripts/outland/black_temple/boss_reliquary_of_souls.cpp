@@ -79,6 +79,7 @@ EndScriptData */
 
 #define CREATURE_ENSLAVED_SOUL          23469
 
+/*
 struct Position
 {
     float x,y;
@@ -93,6 +94,7 @@ static Position Coords[]=
     {450.4, 137.4},
     {450.4, 168.3}
 };
+*/
 
 struct MANGOS_DLL_DECL npc_enslaved_soulAI : public ScriptedAI
 {
@@ -229,7 +231,8 @@ struct MANGOS_DLL_DECL boss_reliquary_of_soulsAI : public ScriptedAI
 
     void SummonSoul()
     {
-        uint32 random = urand(0, 5);
+        /*
+		uint32 random = urand(0, 5);
         float x = Coords[random].x;
         float y = Coords[random].y;
 
@@ -242,6 +245,7 @@ struct MANGOS_DLL_DECL boss_reliquary_of_soulsAI : public ScriptedAI
             Soul->AddThreat(target);
             ++SoulCount;
         }
+		*/
     }
 
     void MergeThreatList(Creature* target)
