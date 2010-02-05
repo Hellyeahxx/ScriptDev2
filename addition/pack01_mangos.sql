@@ -80,6 +80,9 @@ INSERT INTO `creature_ai_scripts` VALUES ('90082', '29181', '14', '0', '100', '3
 INSERT INTO `creature_ai_scripts` VALUES ('90083', '29181', '0', '0', '100', '3', '10000', '20000', '10000', '20000', '11', '20678', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Rayne - SPELL_STARFALL');
 INSERT INTO `creature_ai_scripts` VALUES ('90084', '29181', '0', '0', '100', '3', '10000', '20000', '10000', '20000', '11', '21807', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Rayne - SPELL_WRATH');
 
+--
+-- Eye of Acherus
+--
 
 UPDATE `creature_template` SET `modelid_A` = 16925, `modelid_H` = 16925, `scale` = '2.5', `unit_flags` = 33554432 WHERE `entry` = 28525;
  
@@ -106,6 +109,7 @@ DELETE FROM `creature_template_addon` WHERE `entry` IN (28525,28542,28543,28544)
  
 INSERT INTO `creature_template_addon`(`entry`,`mount`,`bytes1`,`bytes2`,`emote`,`moveflags`,`auras`) values 
 (28525,0,0,0,0,0,'64328 0'),(28542,0,0,0,0,0,'64328 0'),(28543,0,0,0,0,0,'64328 0'),(28544,0,0,0,0,0,'64328 0');
+UPDATE `creature_template` SET `faction_A` = 2084, `faction_H` = 2084 WHERE `entry` = 28528;
 
 --
 --
@@ -121,7 +125,7 @@ UPDATE `creature_template` SET `ScriptName` = 'boss_bronjahm' WHERE `entry` =365
 UPDATE `creature_template` SET `npcflag` = '3' WHERE `entry` =37596 LIMIT 1 ;
 UPDATE `creature_template` SET `npcflag` = '3' WHERE `entry` =37597 LIMIT 1 ;
 
---
+--npc_eye_of_acherus
 --
 -- Icecrown Citadel
 --
